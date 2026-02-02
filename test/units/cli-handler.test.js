@@ -55,7 +55,7 @@ describe('cli-handler.js tests', function () {
 
     // coverage test
     // this case should not occur since the CLI can not be run on files that are not pictures
-    it('should throw an error if file can not be converted', async function () {
+    it('should throw an error if file can not be trimmed', async function () {
       const inPath = 'mywrongpath';
       const cliHandler = new CLIHandler('png', [], inPath, false);
       try {

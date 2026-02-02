@@ -12,7 +12,7 @@ program
   .requiredOption('-c, --color <hex or rgb color>', 'Color to trim around')
   .option(
     '-i, --input <extention>',
-    'Input pictures extention to convert in case of directory path, comma separated',
+    'Input pictures extention to trim in case of directory path, comma separated',
     availableExtentions
   )
   .option('-p, --path <path>', 'Path to the input file / directory', './')
