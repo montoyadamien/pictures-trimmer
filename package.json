@@ -12,7 +12,8 @@
 	"scripts": {
 		"test": "npx nyc --reporter=lcov mocha 'test/**/*.js'",
 		"test-local": "npx nyc --reporter=text mocha 'test/**/*.js'",
-		"lint": "npx eslint . --fix"
+		"lint": "npx eslint . --fix",
+		"lint:test": "npx eslint ."
 	},
 	"repository": {
 		"url": "git+https://github.com/montoyadamien/pictures-trimmer.git",

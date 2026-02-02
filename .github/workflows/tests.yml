@@ -38,7 +38,7 @@ jobs:
         name: node_modules_artifact
         path: node_modules
     - run: npm install -g mocha eslint nyc
-    - run: npm run lint
+    - run: npm run lint:test
   test:
     needs: install
     name: Test

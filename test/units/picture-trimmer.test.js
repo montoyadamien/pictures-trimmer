@@ -50,11 +50,11 @@ describe('picture-trimmer.js tests', function () {
           const inPath = `${testData.path}.${testData.in}`;
           const outPath = `${testData.path}_trimmed.${testData.in}`;
 
-          await (new PictureTrimmer(
+          await new PictureTrimmer(
             inPath,
             new Color(10, 134, 139),
             outPath
-          )).trimPicture();
+          ).trimPicture();
 
           assert.equal(fs.lstatSync(outPath).isFile(), true);
           fs.rmSync(outPath);
