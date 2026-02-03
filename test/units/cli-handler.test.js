@@ -21,6 +21,36 @@ describe('cli-handler.js tests', function () {
       fs.rmSync(outPath);
     });
 
+    it('should not trim a png file if color is not in file', async function () {
+      const inPath = 'test/data/1_test.png';
+      const outPath = 'test/data/1_test_trimmed.png';
+
+      const cliHandler = new CLIHandler(
+        new Color(255, 0, 255),
+        '',
+        inPath,
+        true,
+        true
+      );
+      await cliHandler.trimPictures();
+      assert.equal(fs.existsSync(outPath), false);
+    });
+
+    it('should trim a png file and keep same name', async function () {
+      const inPath = 'test/data/8_test.png';
+      const outPath = 'test/data/8_test.png';
+
+      const cliHandler = new CLIHandler(
+        new Color(10, 134, 139),
+        '',
+        inPath,
+        true,
+        false
+      );
+      await cliHandler.trimPictures();
+      assert.equal(fs.lstatSync(outPath).isFile(), true);
+    });
+
     it('should trim a webp file', async function () {
       const inPath = 'test/data/2_test.webp';
       const outPath = 'test/data/2_test_trimmed.webp';
@@ -34,7 +64,7 @@ describe('cli-handler.js tests', function () {
       );
       await cliHandler.trimPictures();
       assert.equal(fs.lstatSync(outPath).isFile(), true);
-      fs.rmSync(outPath);
+      // fs.rmSync(outPath);
     });
 
     it('should trim a webp file with verbose activated', async function () {
