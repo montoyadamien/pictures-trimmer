@@ -13,37 +13,37 @@ describe('picture-trimmer.js tests', function () {
         {
           path: 'test/data/1_test',
           in: 'png',
-          out: 'webp',
+          color: new Color(10, 134, 139),
         },
         {
           path: 'test/data/2_test',
           in: 'webp',
-          out: 'png',
+          color: new Color(10, 134, 139),
         },
         {
           path: 'test/data/3_test',
           in: 'gif',
-          out: 'jpg',
+          color: new Color(10, 134, 139),
         },
         {
           path: 'test/data/4_test',
           in: 'jpg',
-          out: 'gif',
+          color: new Color(10, 133, 138),
         },
         {
           path: 'test/data/5_test',
           in: 'avif',
-          out: 'tiff',
+          color: new Color(10, 133, 138),
         },
         {
           path: 'test/data/6_test',
           in: 'tiff',
-          out: 'avif',
+          color: new Color(10, 133, 138),
         },
         {
           path: 'test/data/7_test',
           in: 'JPG',
-          out: 'avif',
+          color: new Color(10, 133, 138),
         },
       ].map(async (testData) => {
         it(`should trim a ${testData.in} file`, async function () {
@@ -52,7 +52,7 @@ describe('picture-trimmer.js tests', function () {
 
           await new PictureTrimmer(
             inPath,
-            new Color(10, 134, 139),
+            testData.color,
             outPath
           ).trimPicture();
 
