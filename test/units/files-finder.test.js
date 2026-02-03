@@ -24,8 +24,8 @@ describe('files-finder.js tests', function () {
       const res = finder.getFilesPathToTrim();
       assert.equal(res[0], 'test/data/1_test.png');
       assert.equal(res[5], 'test/data/6_test.tiff');
-      assert.equal(res[7], 'test/data/subfolder/1_subfolder_test.png');
-      assert.equal(res.length, 8);
+      assert.equal(res[8], 'test/data/subfolder/1_subfolder_test.png');
+      assert.equal(res.length, 9);
     });
 
     it('should return a path for a directory and some extentions specified', function () {

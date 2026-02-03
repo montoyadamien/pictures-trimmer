@@ -21,6 +21,21 @@ describe('cli-handler.js tests', function () {
       fs.rmSync(outPath);
     });
 
+    it('should trim a png file and keep same name', async function () {
+      const inPath = 'test/data/8_test.png';
+      const outPath = 'test/data/8_test.png';
+
+      const cliHandler = new CLIHandler(
+        new Color(10, 134, 139),
+        '',
+        inPath,
+        true,
+        false
+      );
+      await cliHandler.trimPictures();
+      assert.equal(fs.lstatSync(outPath).isFile(), true);
+    });
+
     it('should trim a webp file', async function () {
       const inPath = 'test/data/2_test.webp';
       const outPath = 'test/data/2_test_trimmed.webp';
