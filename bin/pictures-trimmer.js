@@ -21,15 +21,17 @@ program
     '-s, --saveas',
     'If false owerwrite current file, else create a copy',
     false
-  );
+  )
+  .option('-r, --range', 'Range to apply to the trim', 0);
 
 program.parse();
 
 const opts = program.opts();
-var { color, input, path } = opts;
+var { color, input, path, range } = opts;
 
 color = ArgsParser.parseColor(color);
 input = ArgsParser.parseInput(input);
+range = ArgsParser.parseRange(range);
 ArgsParser.parsePath(path);
 
 new CLIHandler(
@@ -37,5 +39,6 @@ new CLIHandler(
   input,
   opts.path,
   opts.verbose,
-  opts.saveas
+  opts.saveas,
+  range
 ).trimPictures();

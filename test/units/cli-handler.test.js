@@ -14,7 +14,8 @@ describe('cli-handler.js tests', function () {
         '',
         inPath,
         false,
-        true
+        true,
+        5
       );
       await cliHandler.trimPictures();
       assert.equal(fs.lstatSync(outPath).isFile(), true);
@@ -30,7 +31,8 @@ describe('cli-handler.js tests', function () {
         '',
         inPath,
         true,
-        true
+        true,
+        5
       );
       await cliHandler.trimPictures();
       assert.equal(fs.existsSync(outPath), false);
@@ -45,7 +47,8 @@ describe('cli-handler.js tests', function () {
         '',
         inPath,
         true,
-        false
+        false,
+        5
       );
       await cliHandler.trimPictures();
       assert.equal(fs.lstatSync(outPath).isFile(), true);
@@ -60,7 +63,8 @@ describe('cli-handler.js tests', function () {
         '',
         inPath,
         false,
-        true
+        true,
+        5
       );
       await cliHandler.trimPictures();
       assert.equal(fs.lstatSync(outPath).isFile(), true);
@@ -76,7 +80,8 @@ describe('cli-handler.js tests', function () {
         '',
         inPath,
         true,
-        true
+        true,
+        5
       );
       await cliHandler.trimPictures();
       assert.equal(fs.lstatSync(outPath).isFile(), true);
@@ -87,7 +92,7 @@ describe('cli-handler.js tests', function () {
     // this case should not occur since the CLI can not be run on files that are not pictures
     it('should throw an error if file can not be trimmed', async function () {
       const inPath = 'mywrongpath';
-      const cliHandler = new CLIHandler('png', [], inPath, false);
+      const cliHandler = new CLIHandler('png', [], inPath, false, false, 0);
       try {
         await cliHandler.trimPictures(inPath);
         assert.equal(false, true);

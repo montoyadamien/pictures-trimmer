@@ -63,6 +63,14 @@ class ArgsParser {
       }
     }
   }
+
+  static parseRange(range) {
+    const res = Number.parseInt(range, 0);
+    if (Number.isNaN(res)) {
+      /* istanbul ignore next */
+      this.displayAndExit(`range must be an integer`);
+    }
+  }
 }
 
 exports.ArgsParser = ArgsParser;
