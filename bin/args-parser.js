@@ -70,6 +70,8 @@ class ArgsParser {
       /* istanbul ignore next */
       this.displayAndExit(`range must be an integer`);
     }
+
+    return res;
   }
 }
 
