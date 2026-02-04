@@ -1,6 +1,6 @@
 {
 	"name": "pictures-trimmer",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Node.js image trimmer by color (JPEG, PNG, BMP, TIFF, GIF)",
 	"bin": {
 		"pictures-trimmer": "bin/pictures-trimmer.js"

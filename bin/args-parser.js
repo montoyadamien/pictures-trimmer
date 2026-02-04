@@ -14,7 +14,7 @@ class ArgsParser {
 
   static parseColor(color) {
     const hexRegex = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/;
-    const rgbRegex = /^(\d{3}),(\d{3}),(\d{3})$/;
+    const rgbRegex = /^(\d{1,3}),(\d{1,3}),(\d{1,3})$/;
     let internalColor;
     if (color.match(hexRegex)) {
       const parsed = hexRegex.exec(color);
