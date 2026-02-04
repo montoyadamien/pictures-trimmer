@@ -22,7 +22,7 @@ program
     'If false owerwrite current file, else create a copy',
     false
   )
-  .option('-r, --range', 'Range to apply to the trim', '0');
+  .option('-r, --range <range>', 'Range to apply to the trim');
 
 program.parse();
 
