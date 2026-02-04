@@ -53,7 +53,9 @@ describe('picture-trimmer.js tests', function () {
           await new PictureTrimmer(
             inPath,
             testData.color,
-            outPath
+            outPath,
+            false,
+            5
           ).trimPicture();
 
           assert.equal(fs.lstatSync(outPath).isFile(), true);

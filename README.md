@@ -21,6 +21,9 @@ Options:
   --path, -p        Path to the input file / directory                              [string][default="./"]
   --verbose, -v     Increase verbosity                                              [boolean][default=false]
   --saveas, -s      true to overwrite current file, false to save as a copy         [boolean][default=true]
+  --range, -r       range to apply to each color channel                            [integer][default=0]
+                    e.g. -r 5 -r 195,206,128 means trimming from
+                    190,201,123 to 200,211,133
 ```
 
 ## Examples:
